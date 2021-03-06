@@ -32,7 +32,7 @@
 	<!-- <context:component-scan base-package="com.board.sophyapp" /> -->
 	<context:component-scan base-package="com.board.sophyapp.controller" />
 	<context:component-scan base-package="com.board.sophyapp.dao" />
-	<context:component-scan base-package="com.board.sophyapp.service" />
+	<context:component-scan base-package="com.board.sophyapp.service" /> 
 
 
 
