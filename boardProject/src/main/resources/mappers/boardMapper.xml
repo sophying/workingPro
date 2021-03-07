@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.board.sophyapp.board.boardMapper">
+<!-- <mapper namespace="com.board.sophyapp.model.BoardVO"> -->
+
+<select id="getBoardList" resultType="com.board.sophyapp.model.BoardVO">
+	SELECT
+		bid
+		, category
+		, title
+		, content
+		, tag
+		, view_count
+		, reg_id
+		, reg_date
+		, edit_date
+	FORM
+		tbl_board
+</select>
+
+<select id="getBoardContent" resultType="com.board.sophyapp.model.BoardVO" parameterType="com.board.sophyapp.model.BoardVO">
+
+	SELECT
+		bid
+		, category
+		, title
+		, content
+		, tag
+		, view_count
+		, reg_id
+		, reg_date
+		, edit_date	BID, CATE_CD, TITLE, CONTENT, TAG, VIEW_CNT, REG_ID, REG_DT, EDIT_DT
+	FROM
+		tbl_board
+	WHERE
+		bid = #{bid}
+</select>
+
+<insert id="insertBoard" parameterType="com.board.sophyapp.model.BoardVO">
+	INSERT INTO tbl_board (
+		category
+		, title
+		, content
+		, tag
+		, view_count
+		, reg_id
+		, reg_date
+		, edit_date
+	)
+	VALUES(
+		#{category}
+		, #{title}
+		, #{content}
+		, #{tag}
+		, 0
+		, #{reg_id}
+		, now()
+		, now()
+
+	)
+
+</insert>
+
+<update id="updateBoard" parameterType="com.board.sophyapp.model.BoardVO">
+	UPDATE tbl_board SET
+		category = #{category}
+		, title = #{title}
+		, content = #{content}
+		, tag = #{tag}
+		, edit_date = now()
+	WHERE
+		bid = #{bid}
+</update>
+
+<delete id="deleteBoard" parameterType="int">
+	DELETE FROM
+		tbl_board
+	WHERE
+		bid = #{bid}
+
+</delete>
+
+<update id="updateViewCnt" parameterType="com.board.sophyapp.model.BoardVO">
+	UPDATE tbl_board SET
+		view_count = view_count + 1
+	WHERE
+		bid = #{bid}
+</update>
+
+
+</mapper>
