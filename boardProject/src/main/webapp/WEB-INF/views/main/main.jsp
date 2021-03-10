@@ -9,6 +9,7 @@
 <meta name="description" content="workingProject by hyeRyun">
 <meta name="author" content="hyeRyun">
 <link rel="stylesheet" href="resources/css/main.css">
+<link href="reaources/js/main.js" />
 </head>
 <body>
 	<h1 id="title">김혜련의 Spring Test</h1>
@@ -22,7 +23,7 @@
 			<td><input placeholder="필수입력"></input></td>
 		</tr>
 		<tr>
-			<td><button>가입</button></td>
+			<td><button id="joinBtn">가입</button></td>
 		</tr>
 	</table>
 </body>
