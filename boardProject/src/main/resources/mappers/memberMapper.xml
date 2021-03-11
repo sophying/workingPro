@@ -10,10 +10,22 @@
 			SELECT
 					email
 					, pass
-					, regdate
+					, reg_date
 			FROM
 				member_info
 		</select>
+
+		<insert id="insertMemberJoin" parameterType="com.board.sophyapp.model.MemberVO">
+			INSERT INTO
+				email,
+				pass,
+				reg_date
+			VALUES(
+				#{email},
+				${pass},
+				now()
+			)
+		</insert>
 
 
 

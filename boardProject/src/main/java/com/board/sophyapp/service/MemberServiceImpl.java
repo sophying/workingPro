@@ -20,5 +20,10 @@ public class MemberServiceImpl implements MemberService{
 		return memberDAO.selectMemberInfo();
 	}
 
+	@Override
+	public int memberJoin(MemberVO memberVO) throws Exception {
+		return memberDAO.memberJoin(memberVO);
+	}
+
 
 }

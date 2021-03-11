@@ -19,6 +19,7 @@
 	<resources mapping="/resources/**" location="/resources/css/**" />
 	<resources mapping="/resources/**" location="/resources/js/**" />
 	<resources mapping="/resources/**" location="/resources/doc/**" />
+	<resources mapping="/resources/**" location="/resources/bootstrap/css/**" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<!-- 2021-03-05 Controller가 Model을 리턴하고 DispatcherServlet이 .jsp 파일을 찾을 때 쓰임.	 -->

@@ -9,6 +9,6 @@ public class MemberVO {
 
 	private String email;
 	private String pass;
-	private Date regdate;
+	private Date reg_date;
 
 }

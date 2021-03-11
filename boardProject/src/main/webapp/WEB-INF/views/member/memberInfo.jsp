@@ -17,7 +17,7 @@
 	<tr>
 		<td>${list.email}</td>
 		<td>${list.pass}</td>
-		<td>${list.regdate}</td>
+		<td>${list.reg_date}</td>
 	</tr>
 	</c:forEach>
 </table>

@@ -10,15 +10,19 @@ import org.springframework.stereotype.Repository;
 import com.board.sophyapp.model.MemberVO;
 
 @Repository
-public class MemberDAOImpl implements MemberDAO{
+public class MemberDAOImpl implements MemberDAO {
 
 	@Inject
 	SqlSession sqlSession;
 
 	@Override
 	public List<MemberVO> selectMemberInfo() throws Exception {
-
 		return sqlSession.selectList("member.selectMemberInfo");
+	}
+
+	@Override
+	public int memberJoin(MemberVO memberVO) throws Exception {
+		return sqlSession.insert("member.insertMemberJoin", memberVO);
 	}
 
 }
